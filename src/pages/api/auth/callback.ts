@@ -4,8 +4,6 @@ import { supabase } from "../../../lib/supabase";
 export const GET: APIRoute = async ({ url, cookies, redirect }) => {
     const authCode = url.searchParams.get("code");
 
-    console.log(url.searchParams);
-
     if (!authCode) {
         return new Response("No code provided", { status: 400 });
     }
